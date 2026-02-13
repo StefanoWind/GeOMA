@@ -25,7 +25,7 @@ The **cumulated probability** approach considers the total probability as a supe
 
  $P_{i,j}(C| G \cap S) \sim 1- \prod (1-P_{i,j}(C| G \times S))$,
  
-where $\times$ indicates the Cartesian product between polygon pairs. The formula can be either interpreted as the complementary probability of the joint probability of C "NOT occurring" [[Sheldon, 2019]](https://www.cs.utexas.edu/~abdonm/SDS%20321/a_first_course_in_probability.pdf), example 4f], or as a fuzzy algebraic sum [[Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists), pag. 296]. For instance, if there are 100 polygons of type G and 100 of type S, the total probability maps that are superposed are 10,000, a substantial increase in computational time compared to the nearest probability approach.
+where $\times$ indicates the Cartesian product between polygon pairs. The formula can be either interpreted as the complementary probability of the joint probability of C "NOT occurring" [[Sheldon, 2019](https://www.cs.utexas.edu/~abdonm/SDS%20321/a_first_course_in_probability.pdf), example 4f], or as a fuzzy algebraic sum [[Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists), pag. 296]. For instance, if there are 100 polygons of type G and 100 of type S, the total probability maps that are superposed are 10,000, a substantial increase in computational time compared to the nearest probability approach.
 
 The pros are:
 - it considers the influence of multiple rock formations
