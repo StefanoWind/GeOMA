@@ -86,12 +86,12 @@ x_plot=np.arange(-1,1.1,0.001)
 ctr=0
 for d in dist_plot:
     prob_plot=probability(x_plot-d/2,x_plot+d/2, fall_off)
-    plt.plot(x_plot,prob_plot,color=colors[ctr],label=f'Distance = {d:.2f}')
+    plt.plot(x_plot,prob_plot,color=colors[ctr],label=f'Separation = {d:.2f}')
     plt.plot(-d/2,1,'.',color=colors[ctr])
     plt.plot(d/2,1,'.',color=colors[ctr])
 
     ctr+=1
-plt.title(f'Fall off distance = {fall_off}')
+plt.title(f'Fall-off distance = {fall_off}')
 plt.xlabel('$x$')
 plt.ylabel('$P$')
 plt.grid()
