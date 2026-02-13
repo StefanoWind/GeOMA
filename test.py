@@ -16,10 +16,11 @@ INPUTS:
 
 from shapely.geometry import Polygon
 from shapely.ops import unary_union
-import shapely
 import numpy as np
 from matplotlib import pyplot as plt
 import matplotlib
+from utils import probability, distance_map
+
 matplotlib.rcParams['font.family'] = 'serif'
 matplotlib.rcParams['mathtext.fontset'] = 'cm' 
 matplotlib.rcParams['font.size'] = 14
@@ -46,42 +47,7 @@ dy=0.01
 fall_off=0.5#fall-off distance
 
 #%%Functions
-def probability(distance1,distance2,fall_off,p0=1,tolerance=0.05):
-    from scipy.special import erfinv
-    '''
-    Calculate probability using double Gaussian shape function
-    
-    INPUTS:
-        distance1 (np.array): map of Euclidean distance from nearest type 1 polygon [arbitrary units]
-        distance2 (np.array): map of Euclidean distance from nearest type 2 polygon [arbitrary units]
-        fall_off (float): fall-off distance [arbitrary units]
-        p0 (0<float<1): maximum probability
-        tolerance (0<float<1): fraction of integral of each Gaussian leaking outside of half the fall-off distance (double-sided)
-    
-    OUTPUTS:
-        prob: probability map 
-    '''
-    
-    sigma=fall_off/(2**0.5*erfinv(1-tolerance))/2#calculate Gaussian spread for given tolerance/fall-off
-    prob=p0*np.exp(-distance1**2/(2*sigma**2))*np.exp(-distance2**2/(2*sigma**2))#probability function
-    
-    return prob
 
-def distance_map(points,X,Y):
-    '''
-    Build of distance
-    INPUTS:
-        points (shapely points): points from which minimum distance is calculated
-        X,Y (np.array): grid [arbitrary units]
-    OUTPUTS:
-        distance (np.array): map of minimum distance [arbitrary units]
-    '''
-    grid = shapely.points(X.ravel(), Y.ravel())
-    distance =  shapely.distance(points, grid).reshape(X.shape)
-    
-    return distance
-
-    
 #%% Initialization
 x=np.arange(xmin,xmax+dx/1,dx)
 y=np.arange(ymin,ymax+dy/1,dy)
