@@ -1,8 +1,6 @@
-# GeOMA
-Geological Ore Mapping Algorithm
+# GeOMA (Geological Ore Mapping Algorithm)
 
-
-# Mathematical model
+## Mathematical model
 Drawing a probability map is equivalent to estimating at the $i,j$ grid point the probability of finding the target mineral, conditional on a given distribution of generating rocks of type $G$ and $S$. This can be expressed as:
 
 $P_{i,j}(C| G \cap S)$ 
@@ -54,8 +52,7 @@ Figure 1 shows an example of the double Gaussian probability function for severa
   <figcaption>Figure 1. Sample probability functions for different separation distances.</figcaption>
 </p>
 
-
-# Test case study
+## Test case study
 The probability mapping with the nearest and cumulated approached is tested for idealized rock geometries in "test.py". Figure 2 summarizes the results for two pairs of polygons. Both maps show the expected behavior, with differences between the two approaches mainly arising where multiple pairs interact with each other. As predicted, the cumulated approach shows higher probability in these regions, as well as a smoother map.
 
 <p align="center">
@@ -63,8 +60,7 @@ The probability mapping with the nearest and cumulated approached is tested for 
   <figcaption>Figure 2. Test probability maps using the nearest approach (left), the cumulated approach (middle), and their difference (right).</figcaption>
 </p>
 
-
-# Real-world mapping
+## Real-world mapping
 The "mapper.py" script calculates probability heat maps using both approaches for a real geological map. For this example, we selected as type 1 rocks those that have either "ultramafic" as a class or "serpentinite" as a type, and as type 2 rocks those that have "granodioritic" in the type.
 
 Figures 3 and 4 show the heat map built using the nearest and cumulated approach, respectively. The cumulated approach in this realistic case leads to significantly enlarged promising regions in proximity to the interfaces between the two rock types. Real geological maps can produce a significant cumulative geological interaction, which is captured by the cumulated approach, but not the nearest one. On the flipside, the cumulated approach takes 882 s on an Intel(R) Core(TM) Ultra 9 185H (2.30 GHz) Windows system, while the nearest only 1.8 s.
