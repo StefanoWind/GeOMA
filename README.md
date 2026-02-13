@@ -25,7 +25,7 @@ where $G \equiv g_1 \cap g_2 ... \cap g_n$  and $S \equiv s_1 \cap s_2 ... \cap 
 
 Accounting for the influence of the entire regional rock distribution is both computationally challenging and impractical, considering that only rocks in proximity to the point of interest dominate the geological process. Therefore, the former equation is solved using two approximations.
 
-With the **nearest probability**, we just consider the influence of the rock formations of both types that are the nearest to the point of interest [[Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists), fig. 6-8A]. In formula:
+With the **nearest probability** approach, we just consider the influence of the rock formations of both types that are the nearest to the point of interest [[Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists), fig. 6-8A]. In formula:
 
   $P_{i,j}(C| G \cap S) \sim P_{i,j}(C| g_{near} \cap s_{near})$
   
@@ -33,7 +33,7 @@ The pros are:
 - simple implementation in shapely;
 - fast and scalable computation;
 - conservative approach.
-- 
+  
 The cons are:
 - it does not consider the influence of multiple rock formations;
 - it may underestimate resource probability.
@@ -49,7 +49,7 @@ The pros are:
 - it may reveal high probability regions where multiple rock pairs are present.
 
 The cons are:
-- requires a dedicated function;
+- it requires a dedicated function;
 - slow and poorly scalable computation;
 - it may overestimate resource probability if the assumption of geological independence of individual pairs fails.
 
@@ -97,6 +97,6 @@ To improve the prediction, one could:
 - carry out a Montecarlo simulation for validation;
 - develop a refined statistical model that accounts for more complex cumulative interactions;
 - build a Bayesian estimator based on the distances from both rock types, like 
-$P(C| G\cap S)\sim P(C| r_g+r_s) = P(C) P(r_g+r_s|C) P(r_g+r+s)^{-1}$
-that uses geological survey data of the target mineral to build the prior, $P(C)$, and the likelihood, $P(r_g+r_s|C)$, and the present dataset for the evidence $P(r_g+r+s)$;
-- use a ML framework like Bayesian Logistic Regression, Random Forest, Gaussian Process Classification if geological survey data of the target mineral are available.
+$P(C| G\cap S)\sim P(C| r_g+r_s) = P(C) P(r_g+r_s|C) P(r_g+r_s)^{-1}$
+that uses geological survey data of the target mineral to build the prior, $P(C)$, and the likelihood, $P(r_g+r_s|C)$, and the present dataset for the evidence $P(r_g+r_s)$;
+- use a ML framework like Bayesian Logistic Regression, Random Forest, or Gaussian Process Classification if enough geological survey data of the target mineral are available for training and testing.
