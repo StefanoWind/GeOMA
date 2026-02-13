@@ -5,6 +5,7 @@ On a machine with Python and Git installed, open the Command Prompt (Windows) or
 ```bash
 cd <local path>
 git clone https://github.com/StefanoWind/GeOMA.git
+```
 
 ## Mathematical model
 Drawing a probability map is equivalent to estimating the probability of finding the target mineral at the $i,j$ grid point, conditional on a given distribution of generating rocks of type $G$ and $S$. This can be expressed as:
