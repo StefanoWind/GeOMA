@@ -5,11 +5,11 @@ Geological Ore Mapping Algorithm
 # Mathematical model
 Drawing a probability map is equivalent to estimating at the $i,j$ grid point the probability of finding the target mineral, conditional on a given distribution of generating rocks of type $G$ and $S$. This can be expressed as:
 
-$P_{i,j}(C| G \cap S)$    (Eq.1),
+$P_{i,j}(C| G \cap S)$ 
 
 where $G \equiv g_1 \cap g_2 ... \cap g_n$  and $S \equiv s_1 \cap s_2 ... \cap s_n$ are in turn the union of several polygons in the geological map.
 
-Accounting for the influence of regional rock distribution is both computationally challenging and impractical, considering that only rocks in proximity to the point of interest dominate the geological process. Therefore, Eq. 1 is solved using two approximations.
+Accounting for the influence of regional rock distribution is both computationally challenging and impractical, considering that only rocks in proximity to the point of interest dominate the geological process. Therefore, the former equation is solved using two approximations.
 
 With the **nearest probability**, we just consider the influence of the rock formations of both types that are the nearest to the point of interest [Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists). In formula:
 
@@ -57,7 +57,7 @@ Figure 1 shows an example of the double Gaussian probability function for severa
 The probability mapping with the nearest and cumulated approached is tested for idealized rock geometries in "test.py". Figure 2 summarizes the results for two pairs of polygons. Both maps show the expected behavior, with differences between the two approaches mainly arising where multiple pairs interact with each other. As predicted, the cumulated approach shows higher probability in these regions, as well as a smoother map.
 
 <p align="center">
-  <img src="figures/test.png" width="500">
+  <img src="figures/test_map.png" width="500">
   <figcaption>Figure 2. Test probability maps using the nearest approach (left), the cumulated approach (middle), and their difference (right).</figcaption>
 </p>
 
@@ -68,12 +68,12 @@ The "mapper.py" script calculates probability heat maps using both approaches fo
 Figures 3 and 4 show the heat map built using the nearest and cumulated approach, respectively. The cumulated approach in this realistic case leads to significantly enlarged promising regions in proximity to the interfaces between the two rock types. Real geological maps can produce a significant cumulative geological interaction, which is captured by the cumulated approach, but not the nearest one. On the flipside, the cumulated approach takes 882 s on an Intel(R) Core(TM) Ultra 9 185H (2.30 GHz) Windows system, while the nearest only 1.8 s.
 
 <p align="center">
-  <img src="figures/prob_near.png" width="750">
+  <img src="figures/prob_near.png" width="650">
   <figcaption>Figure 3. Probability map using the nearest approach.</figcaption>
 </p>
 
 <p align="center">
-  <img src="figures/prob_cum.png" width="750">
+  <img src="figures/prob_cum.png" width="650">
   <figcaption>Figure 4. Probability map using the cumulated approach.</figcaption>
 </p>
 
