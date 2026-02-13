@@ -93,7 +93,7 @@ Figures 3 and 4 show the heat map built using the nearest and cumulated approach
 </p>
 
 <p align="center">
-  <img src="figures/prob_cum.png" width="650">
+  <img src="figures/prob_cumul.png" width="650">
   <figcaption>Figure 4. Probability map using the cumulated approach.</figcaption>
 </p>
 
