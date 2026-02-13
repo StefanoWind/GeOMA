@@ -2,7 +2,7 @@
 
 ## Installation guide
 
-On a machine with Python and Git installed, open the Command Prompt (Windows) or terminal (Mac OS, Linux):
+On a machine with Python 3.12 and Git installed, open the Command Prompt (Windows) or terminal (Mac OS, Linux):
 
 ```bash
 cd <local path>
