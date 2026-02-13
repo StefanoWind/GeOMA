@@ -1,5 +1,11 @@
 # GeOMA (Geological Ore Mapping Algorithm)
 
+On a machine with Python and Git installed, open the Command Prompt (Windows) or terminal (Mac OS, Linux):
+
+```bash
+cd <local path>
+git clone https://github.com/StefanoWind/GeOMA.git
+
 ## Mathematical model
 Drawing a probability map is equivalent to estimating the probability of finding the target mineral at the $i,j$ grid point, conditional on a given distribution of generating rocks of type $G$ and $S$. This can be expressed as:
 
@@ -76,3 +82,11 @@ Figures 3 and 4 show the heat map built using the nearest and cumulated approach
   <figcaption>Figure 4. Probability map using the cumulated approach.</figcaption>
 </p>
 
+## Future work
+To improve the prediction, one could:
+- carry out a Montecarlo simulation for validation;
+- develop a refined statistical model that accounts for more complex cumulative interactions;
+- build a Bayesian estimator based on the distances from both rock types, like 
+$P(C| G\cap S)\sim P(C| r_g+r_s) = P(C) P(r_g+r_s|C) P(r_g+r+s)^{-1}$
+that uses geological survey data of the target mineral to build the prior, $P(C)$, and the likelihood, $P(r_g+r_s|C)$, and the present dataset for the evidence $P(r_g+r+s)$;
+- use a ML framework like Bayesian Logistic Regression, Random Forest, Gaussian Process Classification if geological survey data of the target mineral are available.
