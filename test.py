@@ -12,6 +12,9 @@ INPUTS:
     dx (float>0): grid resolution in x [arbitrary units]
     dy (float>0): grid resolution in y [arbitrary units]
     fall_off (float>0): fall-off distance of probability [arbitrary units]
+
+OUTPUTS:
+    Figures of sample probability distribution and maps
 """
 
 from shapely.geometry import Polygon
@@ -46,9 +49,9 @@ dy=0.01
 
 fall_off=0.5#fall-off distance
 
-#%%Functions
-
 #%% Initialization
+
+#grid definition
 x=np.arange(xmin,xmax+dx/1,dx)
 y=np.arange(ymin,ymax+dy/1,dy)
 X,Y=np.meshgrid(x,y,indexing='ij')
