@@ -1,5 +1,7 @@
 # GeOMA (Geological Ore Mapping Algorithm)
 
+#Installation guide
+
 On a machine with Python and Git installed, open the Command Prompt (Windows) or terminal (Mac OS, Linux):
 
 ```bash
@@ -10,6 +12,7 @@ git clone https://github.com/StefanoWind/GeOMA.git
 Then, after activating your Python environment:
 
 ```bash
+cd GeOMA
 pip install -r requirements.txt
 ```
 
