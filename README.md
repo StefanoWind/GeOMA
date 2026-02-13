@@ -9,7 +9,7 @@ where $G \equiv g_1 \cap g_2 ... \cap g_n$  and $S \equiv s_1 \cap s_2 ... \cap 
 
 Accounting for the influence of regional rock distribution is both computationally challenging and impractical, considering that only rocks in proximity to the point of interest dominate the geological process. Therefore, the former equation is solved using two approximations.
 
-With the **nearest probability**, we just consider the influence of the rock formations of both types that are the nearest to the point of interest [Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists). In formula:
+With the **nearest probability**, we just consider the influence of the rock formations of both types that are the nearest to the point of interest [[Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists), fig. 6-8A]. In formula:
 
   $P_{i,j}(C| G \cap S) \sim P_{i,j}(C| g_{near} \cap s_{near})$
   
@@ -25,7 +25,7 @@ The **cumulated probability** approach considers the total probability as a supe
 
  $P_{i,j}(C| G \cap S) \sim 1- \prod (1-P_{i,j}(C| G \times S))$,
  
-where $\times$ indicates the Cartesian product between polygon pairs. The formula can be either interpreted as the complementary probability of the joint probability of C "NOT occurring" [Sheldon, 2019](https://www.cs.utexas.edu/~abdonm/SDS%20321/a_first_course_in_probability.pdf), or as a fuzzy algebraic sum [Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists). For instance, if there are 100 polygons of type G and 100 of type S, the total probability maps that are superposed are 10,000, a substantial increase in computational time compared to the nearest probability approach.
+where $\times$ indicates the Cartesian product between polygon pairs. The formula can be either interpreted as the complementary probability of the joint probability of C "NOT occurring" [[Sheldon, 2019]](https://www.cs.utexas.edu/~abdonm/SDS%20321/a_first_course_in_probability.pdf), example 4f], or as a fuzzy algebraic sum [[Bonham-Carter, 1994](https://www.sciencedirect.com/book/monograph/9780080418674/geographic-information-systems-for-geoscientists), pag. 296]. For instance, if there are 100 polygons of type G and 100 of type S, the total probability maps that are superposed are 10,000, a substantial increase in computational time compared to the nearest probability approach.
 
 The pros are:
 - it considers the influence of multiple rock formations
