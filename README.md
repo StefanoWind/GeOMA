@@ -38,16 +38,19 @@ The cons are:
 
 The final step is to formulate an analytical function of the distance from both the rock types that satisfies the fall-off criterion. This repository adopts a double Gaussian function:
 
-$P_{i,j}(C|g \cap s)=p_0 e^{-r_g^2/(2 \sigma^2)} e^{-r_s^2/(2 \sigma^2)}$,
+$P_{i,j}(C|g \cap s)=p_0 e^\frac{-r_g^2}{2 \sigma^2} e^\frac{-r_s^2}{2 \sigma^2}$,
 
 where:
--$p_0$ is the maximum probability for touching polygons (kept as 1 in the following)
--$r_g$ and $r_s$ is the Euclidean distance of the $i,j$ grid point from of rocks $g$ and $s$, respectively
--$\sigma$ is the Gaussian spreading, which for a given fall-off, $\Delta$ and tolerance, $\gamma<<1$ is equal to $\sigma=\frac{\Delta}{2 \sqrt{2} \text{erf}^{-1}(1-\gamma)$.
+- $p_0$ is the maximum probability for touching polygons (kept as 1 in the following)
+- $r_g$ and $r_s$ is the Euclidean distance of the $i,j$ grid point from of rocks $g$ and $s$, respectively
+- $\sigma$ is the Gaussian spreading, which for a given fall-off, $\Delta$ and tolerance, $\gamma \ll 1$ is equal to $\sigma=\frac{\Delta}{2 \sqrt{2} \text{erf}^{-1}(1-\gamma)}$.
 
 Figure 1 shows an example of the double Gaussian probability function for several rock separation distances. The probability peaks in the center between the two rocks and smoothly vanishes when the distance is larger than the fall-off, $\Delta=0.5$.
 
-![Sample probability function for different sepration distances between rock pairs](figures/prob_1D.png)
+<p align="center">
+  <img src="figures/prob_1D.png" width="500">
+</p>
+
 
 
 # Test case study
