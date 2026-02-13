@@ -38,7 +38,7 @@ The cons are:
 
 The final step is to formulate an analytical function of the distance from both the rock types that satisfies the fall-off criterion. This repository adopts a double Gaussian function:
 
-$P_{i,j}(C|g \cap s)=p_0 e^\frac{-r_g^2}{2 \sigma^2} e^\frac{-r_s^2}{2 \sigma^2}$,
+$P_{i,j}(C|g \cap s)=p_0 e^\frac{-r_g^2+r_s^2}{2 \sigma^2}$,
 
 where:
 - $p_0$ is the maximum probability for touching polygons (kept as 1 in the following)
@@ -52,8 +52,8 @@ Figure 1 shows an example of the double Gaussian probability function for severa
 </p>
 
 
-
 # Test case study
+
 
 
 
