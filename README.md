@@ -59,7 +59,7 @@ Figure 1 shows an example of the double Gaussian probability function for severa
 The probability mapping with the nearest and cumulated approached is tested for idealized rock geometries in "test.py". Figure 2 summarizes the results for two pairs of polygons. Both maps show the expected behavior, with differences between the two approaches mainly arising where multiple pairs interact with each other. As predicted, the cumulated approach shows higher probability in these regions, as well as a smoother map.
 
 <p align="center">
-  <img src="figures/test_map.png" width="500">
+  <img src="figures/test_map.png" width="750">
   <figcaption>Figure 2. Test probability maps using the nearest approach (left), the cumulated approach (middle), and their difference (right).</figcaption>
 </p>
 
