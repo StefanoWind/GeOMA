@@ -1,5 +1,10 @@
 # GeOMA (Geological Ore Mapping Algorithm)
 
+<p align="center">
+  <img src="figures/geoma_logo.png" width="300">
+</p>
+
+
 ## Installation guide
 
 On a machine with Python 3.12 and Git installed, open the Command Prompt (Windows) or terminal (Mac OS, Linux):
